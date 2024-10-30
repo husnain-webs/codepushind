@@ -1,0 +1,13 @@
+/* styles.css */
+:root {
+    --color-dark-red: rgb(18, 29, 49);
+  }
+  
+  /* Example class */
+  .bg-dark-red {
+    background-color: var(--color-dark-red);
+  }
+  .text-dark-red {
+    color: var(--color-dark-red);
+  }
+  
