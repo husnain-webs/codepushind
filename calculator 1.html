@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<body class=" ">
+
+    <div class="w-full h-96">
+        
+        <div class=" p-16   h-screen w-full flex justify-center  bg-gradient-to-r from-slate-800 to-slate-600 ">
+            <div class="">
+                
+            </div>
+            <div class="  border-2 border-orange-300 rounded-xl px-16 py-16">
+                <input class=" w-72 h-10 rounded bg-transparent  border-2 border-orange-300 text-right px-4 text-white font-medium text-2xl " type="text">
+                <div class="  mt-6  ">
+                    <button  class=" button text-white  py-4 px-6 ms-1 font-medium rounded-full bg-slate-600  ">9</button>
+                    <button  class=" button text-white  py-4 px-6 ms-3 font-medium rounded-full bg-slate-600  ">8</button>
+                    <button  class=" button text-white  py-4 px-6 ms-3 font-medium rounded-full bg-slate-600  ">7</button>
+                    <button  class=" button text-white  py-4 px-6 ms-3 font-medium rounded-full bg-orange-400 ">/</button>
+                </div>
+                <div class="  mt-6  ">
+                    <button class="text-white button py-4 px-6 ms-1 font-medium rounded-full bg-slate-600 ">6</button>
+                    <button class="text-white button py-4 px-6 ms-3 font-medium rounded-full bg-slate-600 ">5</button>
+                    <button class="text-white button py-4 px-6 ms-3 font-medium rounded-full bg-slate-600 ">4</button>
+                    <button class="text-white button py-4 px-6 ms-3 font-medium rounded-full bg-orange-400 ">*</button>
+                </div>
+                <div class="  mt-6  ">
+                    <button class="text-white button py-4 px-6 ms-1 font-medium rounded-full bg-slate-600 ">3</button>
+                    <button class="text-white button py-4 px-6 ms-3 font-medium rounded-full bg-slate-600 ">2</button>
+                    <button class="text-white button py-4 px-6 ms-3 font-medium rounded-full bg-slate-600 ">1</button>
+                    <button class="text-white button py-4 px-6 ms-3 font-medium rounded-full bg-orange-400 ">+</button>
+                </div>
+                <div class="  mt-6  ">
+                    <button class="text-white button py-4 px-6 ms-1 font-medium rounded-full bg-slate-600 ">0</button>
+                    <button class="text-white button py-4 px-6 ms-3 font-medium rounded-full bg-slate-600 ">C</button>
+                    <button class="text-white button py-4 px-6 ms-3 font-medium rounded-full bg-black  ">=</button>
+                    <button class="text-white button py-4 px-6 ms-3 font-medium rounded-full bg-orange-400 ">-</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+
+    let string = "";
+    let buttons = document.querySelectorAll(".button");
+    Array.from(buttons).forEach((button) =>{
+        button.addEventListener('click', function (event) {
+        if (event.target.innerHTML == "=") {
+            string = eval(string);
+            document.querySelector('input').value = string;
+        }
+        else if ( event.target.innerHTML == 'C' ){
+            string = "";
+            document.querySelector('input').value = string;
+        }
+        else{
+            console.log(event.target);
+            string = string + event.target.innerHTML;
+            document.querySelector('input').value = string;
+        }
+    })
+    });
+   
+
+</script>
+
+
+
+</body>
+
+</html>
